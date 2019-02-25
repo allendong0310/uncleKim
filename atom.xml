@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Uncle Kim</title>
+  
+  <subtitle>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</subtitle>
+  <link href="/uncleKim/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/uncleKim/"/>
+  <updated>2019-02-22T03:24:56.248Z</updated>
+  <id>http://yoursite.com/uncleKim/</id>
+  
+  <author>
+    <name>董大佩</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>markdown的一些了解和简单语法</title>
+    <link href="http://yoursite.com/uncleKim/2018/09/03/markdown/"/>
+    <id>http://yoursite.com/uncleKim/2018/09/03/markdown/</id>
+    <published>2018-09-03T09:56:48.000Z</published>
+    <updated>2019-02-22T03:24:56.248Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从前两天开始倒腾这个hexo的博客，简单写了一篇博客，就是我的第一篇博文，完全没有排版和格式，今天抽空来了解一下这个markdown，因为hexo官方建议为markdown标记语言，所以就了解一下，其实完全应该是可以用html来替代的。</p><h2 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h2><p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><h2 id="二-用途"><a href="#二-用途" class="headerlink" title="二.用途"></a>二.用途</h2><p>Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。<br>用于编写说明文档，并且以“README.MD”的文件名保存在软件的目录下面。<br>应该说大部分编辑器都是支持MarkDown模式的，我刚看了一下我正在用的sublime也是ok的，使用的话应该还是了解一下快捷键。</p><h2 id="三-语法"><a href="#三-语法" class="headerlink" title="三.语法"></a>三.语法</h2><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h3><p>标题这个应该是和h1~h6是一样的</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure><h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3><p><strong>加粗</strong><br><em>倾斜</em><br><strong><em>倾斜+加粗</em></strong><br><del>删除线</del><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*倾斜*</span><br><span class="line">***倾斜+加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure></p><h3 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h3><blockquote><p>引用的内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用的内容</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h3><hr><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br></pre></td></tr></table></figure><h3 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h3><p>以test.jpg为例，在blog/source目录下新建一个文件夹，如images，将该图片放入此文件夹中。写作的时候使用的图片链接地址为/images/test.jpg<br><img src="/uncleKim/images/test.jpg" alt="blockchain"></p><p>###列表<br>-无序列表（-+*）<br>1.有序列表（1.）</p><h2 id="写不下去了-有空来补"><a href="#写不下去了-有空来补" class="headerlink" title="写不下去了 有空来补"></a>写不下去了 有空来补</h2><p></p><h3>测试html h3使用<h3><br>(注：html无缝衔接 以后就用html了 毕竟顺手)<p></p></h3></h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;自从前两天开始倒腾这个hexo的博客，简单写了一篇博客，就是我的第一篇博文，完全没有排版和格式，今天抽空来了解一下这个markdown，因为hexo官方建议为markdown标记语言，所以就了解一下，其实完全应该是可以用html来替代的。&lt;/p&gt;
+&lt;h2 id=&quot;一-定义&quot;
+      
+    
+    </summary>
+    
+      <category term="hohoho" scheme="http://yoursite.com/uncleKim/categories/hohoho/"/>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/uncleKim/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二课</title>
+    <link href="http://yoursite.com/uncleKim/2018/07/03/lesson2/"/>
+    <id>http://yoursite.com/uncleKim/2018/07/03/lesson2/</id>
+    <published>2018-07-03T09:56:48.000Z</published>
+    <updated>2019-02-20T14:17:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最近的日常"><a href="#最近的日常" class="headerlink" title="最近的日常"></a>最近的日常</h2><p>这个简历是之前上学时候做的github主页，现在想它改为自己的简历页，用的是bootstrap，非常的简单，没有什么特效，更重要的是没有太多的项目可写，工作刚好满一年，前两天因为工作课程一直没有继续学习，做了公司的广告主页，用了一些自己以前没有用过的东西，还算满意，也用node写了一个小的项目，算是node小小的开始，<br>在做主页的时候顺手写了一个非常完美的轮播，这两天会同步更进来。</p><h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><p>（都是一些基本的概念，重点理解语义化）我直接copy别人的懒得打字</p><h5 id="1、HTML是什么，HTML5是什么"><a href="#1、HTML是什么，HTML5是什么" class="headerlink" title="1、HTML是什么，HTML5是什么"></a>1、HTML是什么，HTML5是什么</h5><p>答：HTML 指的是超文本标记语言 (Hyper Text Markup Language)。<br>HTML5是最新的HTML标准，拥有更丰富的语义、图形以及多媒体元素等内容。</p><h5 id="2、HTML元素标签、属性都是什么概念？"><a href="#2、HTML元素标签、属性都是什么概念？" class="headerlink" title="2、HTML元素标签、属性都是什么概念？"></a>2、HTML元素标签、属性都是什么概念？</h5><p>答：HTML不是编程语言，是标记语言，所以要使用标记标签来描述网页。<br>属性是用来提供HTML标签更多的信息。</p><h5 id="3、文档类型是什么概念，起什么作用？"><a href="#3、文档类型是什么概念，起什么作用？" class="headerlink" title="3、文档类型是什么概念，起什么作用？"></a>3、文档类型是什么概念，起什么作用？</h5><p>答：在互联网上有许多不同的文档，只有了解文档的类型，浏览器才能正确的显示文档。提前声明文档类型可以帮助浏览器正确的显示网页。</p><h5 id="4、meta标签都用来做什么的？"><a href="#4、meta标签都用来做什么的？" class="headerlink" title="4、meta标签都用来做什么的？"></a>4、meta标签都用来做什么的？</h5><p>答：通常所说的META标签，是在HTML网页源代码中一个重要的html标签。META标签用来描述一个HTML网页文档的属性，例如作者、日期和时间、网页描述、关键词、页面刷新等。</p><h5 id="5、Web语义化是什么，是为了解决什么问题"><a href="#5、Web语义化是什么，是为了解决什么问题" class="headerlink" title="5、Web语义化是什么，是为了解决什么问题"></a>5、Web语义化是什么，是为了解决什么问题</h5><p>答：HTML的每个标签都有其特定含义(语义),Web语义化是指使用语义恰当的标签,使页面有良好的结构,页面元素有含义,能够让人和搜索引擎都容易理解。</p><h5 id="6、链接是什么概念，对应什么标签？"><a href="#6、链接是什么概念，对应什么标签？" class="headerlink" title="6、链接是什么概念，对应什么标签？"></a>6、链接是什么概念，对应什么标签？</h5><p>答：HTML <a> 元素 (或锚元素) 可以创建一个到其他网页、文件、同一页面内的位置、电子邮件地址或任何其他URL的超链接。</a></p><h5 id="7、常用标签都有哪些，都适合用在什么场景"><a href="#7、常用标签都有哪些，都适合用在什么场景" class="headerlink" title="7、常用标签都有哪些，都适合用在什么场景"></a>7、常用标签都有哪些，都适合用在什么场景</h5><p>答：</p><p>body:在网页上要展示出来的页面内容一定要放在body标签中<br>p:如果想在网页上显示文章，这时就需要p标签了，把文章的段落放到p标签中。标签的默认样式，段前段后都会有空白，如果不喜欢这个空白，可以用css样式来删除或改变它。<br>span:标签是没有语义的，它的作用就是为了设置单独的样式用的。<br>br:在需要加回车换行的地方加入br，br标签作用相当于word文档中的回车。在 html 代码中输入回车、空格都是没有作用的。在html文本中想输入回车换行，就必须输入br。没有HTML内容的标签就是空标签，空标签只需要写一个开始标签，这样的标签有br、hr和img。<br>div:在网页制作过程过中，可以把一些独立的逻辑部分划分出来，放在一个div标签中，这个div标签的作用就相当于一个容器。什么是逻辑部分？它是页面上相互关联的一组元素。如网页中的独立的栏目版块，就是一个典型的逻辑部分。用id属性来为div提供唯一的名称，必须唯一。<br>img:插入图片,img src=”图片地址” alt=”下载失败时的替换文本” title = “提示文本” src：标识图像的位置；alt：指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；title：提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)；图像可以是GIF，PNG，JPEG格式的图像文件。</p><h5 id="8、表单标签都有哪些，对应着什么功能，都有哪些属性"><a href="#8、表单标签都有哪些，对应着什么功能，都有哪些属性" class="headerlink" title="8、表单标签都有哪些，对应着什么功能，都有哪些属性"></a>8、表单标签都有哪些，对应着什么功能，都有哪些属性</h5><p>答：</p><p>form:可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。form method=”传送方式” action=”服务器文件” . form标签是成对出现的，以form开始，以/form结束。action ：浏览者输入的数据被传送到的地方,比如一个PHP页面(save.php)。method ： 数据传送的方式（get/post）。所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在标签之间<br>input:当用户要在表单中键入字母、数字等内容时，就会用到文本输入框。文本框也可以转化为密码输入框。input type=”text/password” name=”名称” value=”文本” / 当type=”text”时，输入框为文本输入框;当type=”password”时, 输入框为密码输入框。name：为文本框命名，以备后台程序ASP 、PHP使用。value：为文本输入框设置默认值。(一般起到提示作用)<br>textarea:当用户需要在表单中输入大段文字时，需要用到文本输入域。textarea rows=”行数” cols=”列数” 文本 /textarea rows ：多行输入域的行数。cols ：多行输入域的列数。在textarea /textarea 标签之间可以输入默认值。<br>radio/checkbox:使用单选框、复选框，让用户选择,input type=”radio/checkbox” value=”值” name=”名称” checked=”checked”/&gt; 当 type=”radio” 时，控件为单选框,当 type=”checkbox” 时，控件为复选框,value：提交数据到服务器的值（后台程序PHP使用）,name：为控件命名，以备后台程序 ASP、PHP 使用,checked：当设置 checked=”checked” 时，该选项被默认选中,同一组的单选按钮，name 取值一定要一致，这样同一组的单选按钮才可以起到单选的作用。<br>submit:使用提交按钮，提交数据,input type=”submit” value=”提交”&gt; type：只有当type值设置为submit时，按钮才有提交作用,value：按钮上显示的文字</p><h1 id="9、ol-ul-li-dl-dd-dt等这些标签都适合用在什么地方，举个例子"><a href="#9、ol-ul-li-dl-dd-dt等这些标签都适合用在什么地方，举个例子" class="headerlink" title="9、ol, ul, li, dl, dd, dt等这些标签都适合用在什么地方，举个例子"></a>9、ol, ul, li, dl, dd, dt等这些标签都适合用在什么地方，举个例子</h1><p>答：ol、ul、li适用无描述的列表。例如：新闻展示页面，一共N条新闻，点进去可浏览详情。<br>dl、dd、dt适用有描述的列表 例如：简历页面，介绍自己的信息、年龄、住址等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;最近的日常&quot;&gt;&lt;a href=&quot;#最近的日常&quot; class=&quot;headerlink&quot; title=&quot;最近的日常&quot;&gt;&lt;/a&gt;最近的日常&lt;/h2&gt;&lt;p&gt;这个简历是之前上学时候做的github主页，现在想它改为自己的简历页，用的是bootstrap，非常的简单，没有什么
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇文章</title>
+    <link href="http://yoursite.com/uncleKim/2018/05/31/first/"/>
+    <id>http://yoursite.com/uncleKim/2018/05/31/first/</id>
+    <published>2018-05-30T17:30:18.000Z</published>
+    <updated>2019-02-20T14:17:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。</p><h2 id="搭个blog"><a href="#搭个blog" class="headerlink" title="搭个blog"></a>搭个blog</h2><p>昨天看到最后的任务，正好手边也没有可以做记录的平台，顺便研究了一下github page，就想着正好在github上搭一个好了，在网络上找到了Hexo，就动手了，嗯，百度是个好东西。<br>一个问题：<a href="https://allendong0310.github.io和项目目录两种page的区别" target="_blank" rel="noopener">https://allendong0310.github.io和项目目录两种page的区别</a></p><h2 id="这个blog就用来先记录这次的项目吧"><a href="#这个blog就用来先记录这次的项目吧" class="headerlink" title="这个blog就用来先记录这次的项目吧"></a>这个blog就用来先记录这次的项目吧</h2><p>留个坑 hexo 标签和分类的功能还没有研究</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。&lt;/p&gt;
+&lt;h2 i
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>aaaa</title>
+    <link href="http://yoursite.com/uncleKim/2018/05/31/aaaa/"/>
+    <id>http://yoursite.com/uncleKim/2018/05/31/aaaa/</id>
+    <published>2018-05-30T16:28:38.000Z</published>
+    <updated>2019-02-22T08:17:43.007Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
