@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta content="yes" name="mobile-web-app-capable">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>Dialogue</title>
+<style type="text/css">
+*{ padding: 0; margin: 0; font-family: Verdana;}
+body,html{ height: 100%; background-color: #FFFFFF;}
+.wrap { width: 100%; height: 100%; overflow: hidden;}
+.wrap2 { width: 100%; height: 1000%; transition:0.3s linear}
+.page { width: 100%; height: 10%;display: flex;align-items: center;}
+.text {line-height: 32px;color: #ffffff;padding: 0 16px;width: 100%;}
+.from {display: block;text-align: right;margin-top: 20px;}
+.page { background-color: #fdfdfd; font-size: 16px; font-weight: bold;}
+</style>
+
+</head>
+<body>
+<div class="wrap" id="wrap"><div class="wrap2" id="wrap2">
+	<div class="page" style="background-color:#607D8B;">
+		<div class="text">“ 听我念，本人金毛铃，又名司徒惠铃，因貌不如人，自惭形秽，自愿将JOHNNY KWONG 先生让给CHARLIE YANG小姐，今后男婚女嫁，各不相干。如有毁约，天诛地灭，好不好？”
+			<span class="from">——王家卫 《堕落天使》</span>
+		</div>
+	</div>
+	<div class="page" style="background-color:#2a8050;">
+		<div class="text">“春天的原野里，你一个人正走着，对面走来一只可爱的小熊，浑身的毛活像天鹅绒，眼睛圆鼓鼓的，它这么对你说道: ‘你好，小姐，和我一块儿打滚玩好么？’ 接着，你就和小熊抱在一起，顺着长满三叶草的山坡咕噜咕噜滚下去，整整玩了一大天。你说棒不棒？”
+			<span class="from">—— 村上春树《挪威的森林》</span>
+		</div>
+	</div>
+	<div class="page" style="background-color:#696969;">
+		<div class="text">“长日尽处，我站在你的面前，你将看到我的伤痕，知道我曾经受伤，也曾经痊愈。”
+			<span class="from">—— 泰戈尔《飞鸟集》 ​​​</span>
+		</div>
+	</div>
+	<div class="page" style="background-color:#8FBC8F;">
+		<div class="text">“ 现代人不缺爱情，或者说不缺貌似爱情的东西，但是寂寞的感觉依然挥之不去。我们可以找个人来谈情说爱，但是，却始终无法缓解一股股涌上心头的落寞荒芜。爱情不是便当，它们依然需要你的郑重其事。”
+			<span class="from">——《东京爱情故事》</span>
+		</div>
+	</div>
+	<div class="page" style="background-color:#808080;">
+		<div class="text">“没关系”就是有关系，形容事情好坏的顺序是很棒，很好，还行，不行，我讨厌你，没关系。”
+			<span class="from">——《破产姐妹》</span>
+		</div>
+	</div>
+	<div class="page" style="background-color:#52879c;">
+		<div class="text">“ 自己做出的选择，才能建立更牢靠的羁绊。”
+			<span class="from">——《小偷家族》</span>
+		</div>
+	</div>
+</div></div>
+<script type="text/javascript">
+//重要！禁止移动端滑动的默认事件
+// document.body.addEventListener('touchmove',function(event){event=event?event:window.event;if(event.preventDefault){event.preventDefault()}else{event.returnValue=false}},false)
+var pages= function (obj) {
+    var box=document.getElementById(obj.wrap);
+    var box2=document.getElementById(obj.wrap2);
+    var len=obj.len;
+    var n=obj.n;
+    var startY,moveY,cliH;
+    //获取屏幕高度
+    var getH=function(){cliH=document.body.clientHeight};
+    getH();
+    window.addEventListener('resize',getH,false);
+    //touchStart
+    var touchstart=function(event){
+        if(!event.touches.length){return;}
+        startY=event.touches[0].pageY;
+        moveY=0;
+    };
+    //touchMove
+    var touchmove=function(event){
+        if(!event.touches.length){return;}
+        moveY=event.touches[0].pageY-startY;
+        box2.style.transform='translateY('+(-n*cliH+moveY)+'px)';//根据手指的位置移动页面
+    };
+    //touchEnd
+    var touchend=function(event){
+        //位移小于+-50的不翻页
+        if(moveY<-50) n++;
+        if(moveY>50) n--;
+        //最后&最前页控制
+        if(n<0) n=0;
+        if(n>len-1) n=len-1;
+        //重定位
+        box2.style.transform='translateY('+(-n*10)+'%)';//根据百分比位置移动页面
+        console.log(n)
+    };
+    //touch事件绑定
+    box.addEventListener("touchstart", function(event){touchstart(event)},false);
+    box.addEventListener("touchmove", function(event){touchmove(event)},false);
+    box.addEventListener("touchend", function(event){touchend(event)},false);
+};
+pages({
+    wrap:'wrap',//.wrap的id
+    wrap2:'wrap2',//.wrap2的id
+    len:6,//一共有几页
+    n:0//页面一打开默认在第几页？第一页就是0，第二页就是1
+});
+</script>
+</body>
+</html><!--[if !IE]>|xGv00|4dd229a8b211cf5276d805db3ec0c964<![endif]-->
