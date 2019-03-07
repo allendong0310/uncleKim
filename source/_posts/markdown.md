@@ -1,6 +1,6 @@
 ---
 title: markdown的一些了解和简单语法
-comments: true
+date: 2018-09-03 09:56:48
 tags: tools
 categories: hohoho
 ---
@@ -54,7 +54,7 @@ Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，
 ```
 ### 5.图片
 以test.jpg为例，在blog/source目录下新建一个文件夹，如images，将该图片放入此文件夹中。写作的时候使用的图片链接地址为/images/test.jpg
-![blockchain](/pennyBlog/images/test.jpg)
+![blockchain](/uncleKim/images/test.jpg)
 ###列表
 -无序列表（-+*）
 1.有序列表（1.）

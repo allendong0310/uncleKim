@@ -10,6 +10,7 @@
     {% endif %}
 
     <div class="custom-logo-site-title">
+      <span class="site-img"></span>
       <a href="{{ config.root }}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">{{ config.title }}</span>

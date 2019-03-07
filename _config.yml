@@ -12,8 +12,8 @@ timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com/pennyBlog
-root: /pennyBlog/
+url: http://yoursite.com/uncleKim
+root: /uncleKim/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -44,7 +44,7 @@ highlight:
   tab_replace:
 
 # Home page setting
-# path: Root path for your blogs index page. (default = '')
+# path: /images/logo.png
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
@@ -88,6 +88,7 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/allendong0310/pennyBlog.git
-  branch: master
+  repo: https://github.com/allendong0310/uncleKim.git
+  branch: gh-pages
+  message: dialogue page (移动端)
 
