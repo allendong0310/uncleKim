@@ -55,7 +55,7 @@ body,html{ height: 100%; background-color: #FFFFFF;}
 </div></div>
 <script type="text/javascript">
 //重要！禁止移动端滑动的默认事件
-// document.body.addEventListener('touchmove',function(event){event=event?event:window.event;if(event.preventDefault){event.preventDefault()}else{event.returnValue=false}},false)
+document.body.addEventListener('touchmove',function(event){event=event?event:window.event;if(event.preventDefault){event.preventDefault()}else{event.returnValue=false}},false)
 var pages= function (obj) {
     var box=document.getElementById(obj.wrap);
     var box2=document.getElementById(obj.wrap2);
