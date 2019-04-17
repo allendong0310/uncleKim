@@ -90,5 +90,5 @@ deploy:
   type: git
   repo: https://github.com/allendong0310/uncleKim.git
   branch: gh-pages
-  message: dialogue page (移动端)
+  message: 禁止移动端滑动事件
 
