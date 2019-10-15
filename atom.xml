@@ -86,6 +86,28 @@
   </entry>
   
   <entry>
+    <title>第一篇文章</title>
+    <link href="http://yoursite.com/uncleKim/2018/05/31/git/"/>
+    <id>http://yoursite.com/uncleKim/2018/05/31/git/</id>
+    <published>2018-05-30T17:30:18.000Z</published>
+    <updated>2019-04-15T05:54:25.788Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。</p><h2 id="搭个blog"><a href="#搭个blog" class="headerlink" title="搭个blog"></a>搭个blog</h2><p>昨天看到最后的任务，正好手边也没有可以做记录的平台，顺便研究了一下github page，就想着正好在github上搭一个好了，在网络上找到了Hexo，就动手了，嗯，百度是个好东西。<br>一个问题：<a href="https://allendong0310.github.io和项目目录两种page的区别" target="_blank" rel="noopener">https://allendong0310.github.io和项目目录两种page的区别</a></p><h2 id="这个blog就用来先记录这次的项目吧"><a href="#这个blog就用来先记录这次的项目吧" class="headerlink" title="这个blog就用来先记录这次的项目吧"></a>这个blog就用来先记录这次的项目吧</h2><p>留个坑 hexo 标签和分类的功能还没有研究</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。&lt;/p&gt;
+&lt;h2 i
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>aaaa</title>
     <link href="http://yoursite.com/uncleKim/2018/05/31/aaaa/"/>
     <id>http://yoursite.com/uncleKim/2018/05/31/aaaa/</id>
