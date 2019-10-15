@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/uncleKim/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/uncleKim/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/uncleKim/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uncleKim/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uncleKim/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uncleKim/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/uncleKim/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+  <link rel="alternate" href="/uncleKim/atom.xml" title="Uncle Kim" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="box-shadow 在前端的 CSS 编写工作想必十分常见。但是 box-shadow 除去它的常规用法，其实还存在许多不为人知的奇技淫巧。 box-shadow 常规用法基础属性语法box-shadow 属性向框添加一个或多个阴影。 box-shadow: h-shadow v-shadow blur spread color inset; 像这样 box-shadow: 10px 10px">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css 阴影的奇技淫巧">
+<meta property="og:url" content="http://yoursite.com/uncleKim/2018/09/03/cssShadow/index.html">
+<meta property="og:site_name" content="Uncle Kim">
+<meta property="og:description" content="box-shadow 在前端的 CSS 编写工作想必十分常见。但是 box-shadow 除去它的常规用法，其实还存在许多不为人知的奇技淫巧。 box-shadow 常规用法基础属性语法box-shadow 属性向框添加一个或多个阴影。 box-shadow: h-shadow v-shadow blur spread color inset; 像这样 box-shadow: 10px 10px">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/cssBoxShadow.png">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/boxShadow.png">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/css3Filter.png">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/test.jpg">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/test.jpg">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/cactus.png">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/dancetouying.png">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/danceyinying2.png">
+<meta property="og:image" content="http://yoursite.com/uncleKim/images/jinbian.png">
+<meta property="og:updated_time" content="2019-10-15T10:41:55.939Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css 阴影的奇技淫巧">
+<meta name="twitter:description" content="box-shadow 在前端的 CSS 编写工作想必十分常见。但是 box-shadow 除去它的常规用法，其实还存在许多不为人知的奇技淫巧。 box-shadow 常规用法基础属性语法box-shadow 属性向框添加一个或多个阴影。 box-shadow: h-shadow v-shadow blur spread color inset; 像这样 box-shadow: 10px 10px">
+<meta name="twitter:image" content="http://yoursite.com/uncleKim/images/cssBoxShadow.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/uncleKim/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/uncleKim/2018/09/03/cssShadow/">
+
+
+
+
+
+  <title>css 阴影的奇技淫巧 | Uncle Kim</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-134841514-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <span class="site-img"></span>
+      <a href="/uncleKim/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle Kim</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/uncleKim/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/uncleKim/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/uncleKim/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/uncleKim/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/uncleKim/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dialogue">
+          <a href="/uncleKim/dialogue/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            dialogue
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncleKim/uncleKim/2018/09/03/cssShadow/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="董大佩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uncleKim/images/testme.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle Kim">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css 阴影的奇技淫巧</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T09:56:48Z">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/uncleKim/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>box-shadow 在前端的 CSS 编写工作想必十分常见。但是 box-shadow 除去它的常规用法，其实还存在许多不为人知的奇技淫巧。</p>
+<h2 id="box-shadow-常规用法"><a href="#box-shadow-常规用法" class="headerlink" title="box-shadow 常规用法"></a>box-shadow 常规用法</h2><h3 id="基础属性语法"><a href="#基础属性语法" class="headerlink" title="基础属性语法"></a>基础属性语法</h3><p><code>box-shadow</code> 属性向框添加一个或多个阴影。<br><strong> box-shadow: h-shadow v-shadow blur spread color inset; </strong><br>像这样 <code>box-shadow: 10px 10px 5px #888888;</code> 除此之外，我们要知道，box-shadow 是分外 shadow 和内 shadow 的，内阴影即是在属性上添加 inset 。</p>
+<p>我们再看看 box-shadow 有什么其它妙用。</p>
+<h3 id="box-shadow-模拟多边框"><a href="#box-shadow-模拟多边框" class="headerlink" title="box-shadow 模拟多边框"></a>box-shadow 模拟多边框</h3><p>通常而言，我们会给许多元素添加边框 <code>border</code>，但是当如果需要多重边框，这个时候，由于 <code>border</code> 单重的限制，box-shadow 就可以闪亮登场了。我们可以轻松的使用外阴影或者内阴影来模拟边框效果。</p>
+<div style="margin: 50px auto;width: 200px;height: 100px;background: deeppink;box-shadow: inset 0 0 0 6px #fff,0 0 0 10px #333, 0 0 0 15px #aaa, 0 2px 5px 15px #666;"></div>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">div &#123;</span><br><span class="line">  margin: 50px auto;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: deeppink;</span><br><span class="line">  box-shadow: </span><br><span class="line">    inset 0 0 0 6px <span class="comment">#fff,</span></span><br><span class="line">    0 0 0 10px <span class="comment">#333, </span></span><br><span class="line">    0 0 0 15px <span class="comment">#aaa, </span></span><br><span class="line">    0 2px 5px 15px <span class="comment">#666;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，由内至外，这里利用 box-shadow ，设置了白色、黑色、灰色三层边框及最外层带模糊的阴影。</p>
+<p>box-shadow 有一个参数是设置 blur 的，即是模糊的距离，在上面的例子中，即是第二重阴影 0 0 0 10px #333, 中的第三个 0 ，当 blur 的值为 0 ，那么阴影本身是不会模糊的，那么就很容易模拟出边框的效果。</p>
+<p>而且，元素可以设置多重阴影，并且它们存在层叠关系，离 box-shadow 最近设置的层叠优先级最高，依次递减，这个对照代码很好理解。</p>
+<p>当然，值得注意的是：</p>
+<ul>
+<li><p>阴影并不是边框，它们并不占有实际的空间，也不能归属于 <code>box-sizing</code> 的范围。不过，你可以通过使用内边距或外边距（取决于阴影是内部的还是外部的）占据额外的空间来模拟。</p>
+</li>
+<li><p>上述示例模拟的边框是位于元素外部的。它不能捕获类似悬停和点击的鼠标事件。如果事件很重要，那么可以通过添加 inset 关键字让阴影出现在元素的内部。注意，你可能需要添加额外的内边距来扩充空间。</p>
+</li>
+</ul>
+<h3 id="box-shadow-模拟半透明遮罩层"><a href="#box-shadow-模拟半透明遮罩层" class="headerlink" title="box-shadow 模拟半透明遮罩层"></a>box-shadow 模拟半透明遮罩层</h3><p>很多时候，我们需要用到类似下图这样的遮罩层，通过半透明遮罩层把背景调暗，凸显某些 UI 组件，提升用户体验。<br><img src="/uncleKim/images/cssBoxShadow.png" alt="blockchain"></p>
+<p>常规的做法通常都会用到一个额外的元素，用作遮罩层，至少也是一个伪元素， before 或者 after。<br>不考虑低版本的兼容性的话，其实用 box-shadow 也可以模拟遮罩层这种效果。</p>
+<div style="width:200px;line-height:200px;text-align:center;background:#fff;margin:50px auto;box-shadow: 0 0 0 50px rgba(0, 0, 0, .5);">box-shadow模拟遮罩层</div>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"bg"</span>&gt;我是背景我是背景我是背景我是背景我是背景我是背景&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">"foo"</span>&gt;box-shadow模拟遮罩层&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#foo&#123;</span></span><br><span class="line">  width:200px;</span><br><span class="line">  line-height:200px;</span><br><span class="line">  text-align:center;</span><br><span class="line">  background:<span class="comment">#fff;</span></span><br><span class="line">  margin:50px auto;</span><br><span class="line">  box-shadow: 0 0 0 1920px rgba(0, 0, 0, .5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，值得注意的是：</p>
+<ul>
+<li><p>使用这种方法不可避免的需要考虑兼容性，IE9+、Firefox、Chrome、Opera 以及 Safari 5.1.1 支持 box-shadow 属性。</p>
+</li>
+<li><p>由于每个人的浏览器视口大小不一致，为了所有情况下 box-shadow 生成的阴影都能覆盖整个页面，可能需要将阴影的尺寸 spread 设置的很大。</p>
+</li>
+<li><p>如果你真的想尝试这个方法，box-shadow 从性能角度而言属于 耗性能样式，不同样式在消耗性能方面是不同的，box-shadow 从渲染角度来讲十分耗性能，原因就是与其他样式相比，它们的绘制代码执行时间过长。虽然有 GPU 的 3D 加速，但是具体使用的时候还是值得斟酌考虑。不过你要知道，没有不变的事情，在今天性能很差的样式，可能明天就被优化，并且浏览器之间也存在差异。</p>
+</li>
+</ul>
+<h3 id="多重-box-shadow-之简单图形"><a href="#多重-box-shadow-之简单图形" class="headerlink" title="多重 box-shadow 之简单图形"></a>多重 box-shadow 之简单图形</h3><p>从本质上讲，box-shadow 是将自身投影到另一个地方，在很多情况下，我们是可以利用 box-shadow 来复制自身的！<br>我们来实现一个云朵的图形<br>其中的云层，就是利用了 多重box-shaodw 在一个伪元素内生成的。</p>
+<div style="width:100px;height:100px;margin:50px auto;background:deeppink;border-radius:50%;box-shadow:120px 0px 0 -10px #795548,95px 20px 0 0px #607D8B,30px 30px 0 -10px green,90px -20px 0 0px #FFC107,40px -40px 0 0px #2196F3;display：inline-block"></div>
+
+<div style="width:100px;height:100px;margin:50px auto;background:#999;border-radius:50%;box-shadow:120px 0px 0 -10px #999,95px 20px 0 0px #999,30px 30px 0 -10px #999,90px -20px 0 0px #999,40px -40px 0 0px #999;display：inline-block;margin-left:200px"></div>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">  width:100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  margin:50px auto;</span><br><span class="line">  background:deeppink;</span><br><span class="line">  border-radius:50%;</span><br><span class="line">  box-shadow:</span><br><span class="line">    120px 0px 0 -10px <span class="comment">#795548,</span></span><br><span class="line">    95px 20px 0 0px <span class="comment">#607D8B,</span></span><br><span class="line">    30px 30px 0 -10px green,</span><br><span class="line">    90px -20px 0 0px <span class="comment">#FFC107,</span></span><br><span class="line">    40px -40px 0 0px <span class="comment">#2196F3;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多重-box-shadow-实现立体感"><a href="#多重-box-shadow-实现立体感" class="headerlink" title="多重 box-shadow 实现立体感"></a>多重 box-shadow 实现立体感</h3><p>这种方法运用在 text-shadow 上同样可以，可以实现文字的立体感。</p>
+<p>运用多重 box-shadow ，不断偏移 1px ，就可以产生十分立体的感觉。</p>
+<div style="width:200px;line-height:68px;text-align:center;font-size:16px;margin:50px auto;color:#fff;background:hsl(0, 0%, 60%);cursor:pointer;box-shadow:1px 1px 0 0 hsl(0, 0%, 65%),2px 2px 0 0 hsl(0, 0%, 70%),3px 3px 0 0 hsl(0, 0%, 75%),4px 4px 0 0 hsl(0, 0%, 80%),5px 5px 0 0 hsl(0, 0%, 85%);"> 立体按钮 </div>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt; 立体按钮 &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">  width:200px;</span><br><span class="line">  line-height:68px;</span><br><span class="line">  text-align:center;</span><br><span class="line">  font-size:16px;</span><br><span class="line">  margin:50px auto;</span><br><span class="line">  color:<span class="comment">#fff;</span></span><br><span class="line">  background:hsl(0, 0%, 60%);</span><br><span class="line">  cursor:pointer;</span><br><span class="line">  box-shadow:</span><br><span class="line">    1px 1px 0 0 hsl(0, 0%, 65%),</span><br><span class="line">    2px 2px 0 0 hsl(0, 0%, 70%),</span><br><span class="line">    3px 3px 0 0 hsl(0, 0%, 75%),</span><br><span class="line">    4px 4px 0 0 hsl(0, 0%, 80%),</span><br><span class="line">    5px 5px 0 0 hsl(0, 0%, 85%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div style="width:200px;line-height:68px;text-align:center;font-size:48px;margin:50px auto;color:hsl(0, 0%, 60%);text-shadow:1px 1px 0 hsl(0, 0%, 65%),2px 2px 0 hsl(0, 0%, 70%),3px 3px 0 hsl(0, 0%, 75%),4px 4px 0 hsl(0, 0%, 80%),5px 5px 0 hsl(0, 0%, 85%);">Shadow</div>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;Shadow&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">  width:200px;</span><br><span class="line">  line-height:68px;</span><br><span class="line">  text-align:center;</span><br><span class="line">  font-size:48px;</span><br><span class="line">  margin:50px auto;</span><br><span class="line">  color:hsl(0, 0%, 60%);</span><br><span class="line">  text-shadow:</span><br><span class="line">    1px 1px 0 hsl(0, 0%, 65%),</span><br><span class="line">    2px 2px 0 hsl(0, 0%, 70%),</span><br><span class="line">    3px 3px 0 hsl(0, 0%, 75%),</span><br><span class="line">    4px 4px 0 hsl(0, 0%, 80%),</span><br><span class="line">    5px 5px 0 hsl(0, 0%, 85%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>box-shadow效果的本质实际上是对自身的复制</em></p>
+<h2 id="filter-drop-shadow"><a href="#filter-drop-shadow" class="headerlink" title="filter:drop-shadow"></a>filter:drop-shadow</h2><p>其实说到 box-shadow，就不得不提到另一个和它极为相似的 CSS3 新属性 filter:drop-shadow，filter 即是 CSS 滤镜，可以在元素呈现之前，为元素的渲染提供一些效果，如模糊、颜色转移之类的。滤镜常用于调整图像、背景、边框的渲染。</p>
+<p>当然这里我们只说 filter:drop-shadow。</p>
+<h3 id="与box-shadow比较"><a href="#与box-shadow比较" class="headerlink" title="与box-shadow比较"></a>与box-shadow比较</h3><h4 id="兼容性比较"><a href="#兼容性比较" class="headerlink" title="兼容性比较"></a>兼容性比较</h4><p>CSS3 box-shadow从IE9浏览器开始就支持了，兼容性如下截图：<br><img src="/uncleKim/images/boxShadow.png" alt="blockchain"></p>
+<p>而filter中的drop-shadowIE13才开始支持，移动端Android4.4才开始支持，细想一下，其实离在移动端愉快使用就差一口气。<br>兼容性如下图：<br><img src="/uncleKim/images/css3Filter.png" alt="blockchain"></p>
+<h4 id="同样的参数值，表现效果有差异"><a href="#同样的参数值，表现效果有差异" class="headerlink" title="同样的参数值，表现效果有差异"></a>同样的参数值，表现效果有差异</h4><p>filter中的drop-shadow语法如下：<br><code>filter: drop-shadow(x偏移, y偏移, 模糊大小, 色值);</code><br>eg:<code>filter:drop-shadow(5px 5px 10px black)</code><br>表示右下5像素偏移，10像素模糊的黑色阴影。<br><code>box-shadow: 5px 5px 10px black;</code><br><em>filter</em><br><img src="/uncleKim/images/test.jpg" width="100px" style="filter:drop-shadow(5px 5px 10px black);border:none"><br><em>box-shadow</em><br><img src="/uncleKim/images/test.jpg" width="100px" style="box-shadow: 5px 5px 10px black;border:0;padding:0"></p>
+<h4 id="drop-shadow没有内阴影效果"><a href="#drop-shadow没有内阴影效果" class="headerlink" title="drop-shadow没有内阴影效果"></a>drop-shadow没有内阴影效果</h4><p>box-shadow支持inset内阴影，如：</p>
+<p><code>box-shadow: inset 5px 5px 10px black;</code><br>但是，drop-shadow却没有。</p>
+<h4 id="drop-shadow不能阴影叠加"><a href="#drop-shadow不能阴影叠加" class="headerlink" title="drop-shadow不能阴影叠加"></a>drop-shadow不能阴影叠加</h4><p>box-shadow有个超屌的特性，就是阴影可以任意累加，因此，理论上我们可以使用box-shadow生成任意的图片。</p>
+<div style="box-shadow: 11px 8px #626262,11px 9px #626262,11px 10px #626262,11px 11px #626262,11px 12px #626262,11px 13px #626262,11px 14px #626262,4px 15px #626262,5px 15px #626262,6px 15px #626262,7px 15px #626262,8px 15px #626262,9px 15px #626262,10px 15px #626262,11px 15px #626262,12px 15px #626262,13px 15px #626262,14px 15px #626262,15px 15px #626262,16px 15px #626262,17px 15px #626262,18px 15px #626262,11px 16px #626262,11px 17px #626262,11px 18px #626262,11px 19px #626262,11px 20px #626262,11px 21px #626262,11px 22px #626262;width:1px;height:1px;"></div>
+
+<div style="position: absolute; margin: -5px 0 0 9px; height: 4px; border-left: 1px solid #bdbdbd; box-shadow: 1px 1px #bdbdbd, 2px 2px #bdbdbd, 3px 3px #bdbdbd, 4px 4px #bdbdbd, 5px 5px #bdbdbd, -1px 1px #bdbdbd, -2px 2px #bdbdbd, -3px 3px #bdbdbd, -4px 4px #bdbdbd, -5px 5px #bdbdbd;"></div>
+
+<p>用box-shadow实现的图片<br><a href="https://www.zhangxinxu.com/study/201311/box-shadow-convert-to-image.html" target="_blank" rel="noopener">一个牛逼的demo</a></p>
+<p>canvas上下文有个getImageData方法，可以获取画布每一个像素点的颜色信息、透明度信息。于是，利用drawImage将无名小主靓照原封不动迁到画布上，再利用getImageData获得的像素点信息，转换成box-shadow值，然后呈现之。</p>
+<p>理论上，任意的图片，box-shadow都可以呈现。</p>
+<p>但是filter中的drop-shadow就只能抱歉了，我就是一锤子买卖。没钱也这么任性！</p>
+<p>说到现在，体现的尽是drop-shadow的不好，兼容性不够，内阴影不支持，多阴影也不支持。</p>
+<p>真的是这样吗？显然非也！所谓存在既有道理。</p>
+<p>drop-shadow有一个很厉害的特性，也就这一个特性，让其以后有足够的机会大放异彩！那就是，drop-shadow才是真正意义上的投影，而box-shadow只是盒阴影而已。</p>
+<p>什么意思呢？</p>
+<h4 id="阴影-vs-盒阴影"><a href="#阴影-vs-盒阴影" class="headerlink" title="阴影 vs 盒阴影"></a>阴影 vs 盒阴影</h4><p>实践出真知，下面我们用CSS border写一个虚线框，例如：<br><code>border: 10px dashed #beceeb;</code><br>结果长相如下：</p>
+<div style="width:50px; height:50px;border: 10px dashed #beceeb;"></div>
+
+<p>然后，我们分别应用box-shadow和drop-shadow滤镜：</p>
+<p><code>border: 10px dashed #beceeb; box-shadow: 5px 5px 10px black;</code><br><code>border: 10px dashed #beceeb; filter: drop-shadow(5px 5px 10px black);</code><br>结果：</p>
+<div style="width:50px; height:50px;border: 10px dashed #beceeb; box-shadow: 5px 5px 10px black;"></div><br><div style="width:50px; height:50px;border: 10px dashed #beceeb; filter: drop-shadow(5px 5px 10px black);"></div>
+
+<p>怎么样？是不是本性暴露了！</p>
+<p>box-shadow顾名思意“盒阴影”，只是盒子的阴影；你想啊，这盒子中间明明是透明的，结果，阴影的时候，居然光线没有穿透；但是drop-shadow就符合真实世界的投影，非透明的颜色，我就有投影；透明部分，光线穿过，没投影，而什么盒子不盒子的，跟我没有任何关系。</p>
+<p>drop-shadow不仅可以穿透代码构建的元素的透明部分，PNG图片的透明部分也是可以穿透的，如下图：</p>
+<p><img src="/uncleKim/images/cactus.png" width="100px" style="filter:drop-shadow(5px 5px 10px black);border:none;border: 1px solid #beceeb;"></p>
+<p>于是，曾经困扰我们的一些老大难的问题就有了很好的解决思路了！</p>
+<h3 id="drop-shadow的实际应用"><a href="#drop-shadow的实际应用" class="headerlink" title="drop-shadow的实际应用"></a>drop-shadow的实际应用</h3><h4 id="带有箭头指向的浮层面板"><a href="#带有箭头指向的浮层面板" class="headerlink" title="带有箭头指向的浮层面板"></a>带有箭头指向的浮层面板</h4><div style="background: #f7f7f7;height: 693px;"><br><div class="box box-shadow" style=" margin: 40px; padding: 50px;background-color: #fff;position: relative;font-size: 24px;box-shadow: 5px 5px 10px black;"><br>    <i class="cor" style="position: absolute;left: -40px;width: 0; height: 0;overflow: hidden;border: 20px solid transparent;border-right-color: #fff;"></i><br>    box-shadow<br></div><br><div class="box drop-shadow" style=" margin: 40px; padding: 50px;background-color: #fff;position: relative;font-size: 24px;filter: drop-shadow(5px 5px 10px black);"><br>    <i class="cor" style="position: absolute;left: -40px;widtd: 0; height: 0;overflow: hidden;border: 20px solid transparent;border-right-color: #fff;"></i><br>    filter: drop-shadow<br></div><br></div>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    margin: 40px; padding: 50px;</span><br><span class="line">    background-color: <span class="comment">#fff;</span></span><br><span class="line">    position: relative;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">&#125;</span><br><span class="line">.cor &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: -40px;</span><br><span class="line">    widtd: 0; height: 0;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    border: 20px solid transparent;</span><br><span class="line">    border-right-color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">.box-shadow &#123;</span><br><span class="line">    box-shadow: 5px 5px 10px black;</span><br><span class="line">&#125;</span><br><span class="line">.drop-shadow &#123;</span><br><span class="line">    filter: drop-shadow(5px 5px 10px black);</span><br><span class="line">&#125;</span><br><span class="line">HTML代码：</span><br><span class="line">&lt;div class=<span class="string">"box box-shadow"</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">"cor"</span>&gt;&lt;/i&gt;</span><br><span class="line">    box-shadow</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"box drop-shadow"</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">"cor"</span>&gt;&lt;/i&gt;</span><br><span class="line">    filter: drop-shadow</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="PNG格式小图标"><a href="#PNG格式小图标" class="headerlink" title="PNG格式小图标"></a>PNG格式小图标</h4><p><i class="icon" style="display: inline-block;width: 20px; height: 20px;overflow: hidden;"><i class="icon icon-del" style="position: relative;left: -20px;border-right: 20px solid transparent;-webkit-filter: drop-shadow(rgb(51, 204, 0) 20px 0);filter: drop-shadow(rgb(51, 204, 0) 20px 0);background: url(/uncleKim/images/delete.png) no-repeat;"></i></i></p>
+<p>原理其实很简单，使用了CSS3滤镜filter中的drop-shadow，drop-shadow滤镜可以给元素或图片非透明区域添加投影。</p>
+<p>在Chrome浏览器下，drop-shadow有一个如下的呈现特性：</p>
+<blockquote>
+<p>在Chrome浏览器下，如果一个元素的主体部分，无论以何种方式，只要在页面中不可见，其drop-shadow是不可见的；实体部分哪怕有1像素可见，则drop-shadow完全可见。</p>
+</blockquote>
+<h3 id="各种各样的阴影"><a href="#各种各样的阴影" class="headerlink" title="各种各样的阴影"></a>各种各样的阴影</h3><h4 id="单侧阴影"><a href="#单侧阴影" class="headerlink" title="单侧阴影"></a>单侧阴影</h4><p>先说单侧投影，关于 box-shadow，大部分时候，我们使用它都是用来生成一个两侧的投影，或者一个四侧的投影。如下：<br><img src="/uncleKim/images/dancetouying.png" alt="blockchain"><br>OK，那如果要生成一个单侧的投影呢？</p>
+<p>我们来看看 box-shadow 的用法定义：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    box-shadow: none | [inset? &amp;&amp; [ &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur-radius&gt;? &lt;spread-radius&gt;? &lt;color&gt;? ] ]<span class="comment">#</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以 box-shadow: 1px 2px 3px 4px #333 为例，4 个数值的含义分别是，x 方向偏移值、y 方向偏移值 、模糊半径、扩张半径。</p>
+<p>这里有一个小技巧，扩张半径可以为负值。</p>
+<p>继续，如果阴影的模糊半径，与负的扩张半径一致，那么我们将看不到任何阴影，因为生成的阴影将被包含在原来的元素之下，除非给它设定一个方向的偏移量。所以这个时候，我们给定一个方向的偏移值，即可实现单侧投影：<br><img src="/uncleKim/images/danceyinying2.png" alt="blockchain"></p>
+<h4 id="投影背景-背景动画"><a href="#投影背景-背景动画" class="headerlink" title="投影背景 / 背景动画"></a>投影背景 / 背景动画</h4><p>很明显，0 = -0，所以当 box-shadow 的模糊半径和扩张半径都为 0 的时候，我们也可以得到一个和元素大小一样的阴影，只不过被元素本身遮挡住了，我们尝试将其偏移出来。<br>CSS代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 80px;</span><br><span class="line">    height: 80px;</span><br><span class="line">    border: 1px solid #333;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    box-shadow: 80px 80px 0 0 #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到如下结果：</p>
+<p><div style="width: 80px;height: 80px;border: 1px solid #333;box-sizing: border-box;box-shadow: 80px 80px 0 0 #000;"></div></p>
+<p><div style="height:80px;"></div><br>有什么用呢？好像没什么意义啊。</p>
+<p>额，确实好像没什么用。不过我们注意到，box-shadow 是可以设置多层的，也就是多层阴影，而且可以进行过渡变换动画（补间动画）。但是 background-image: linear-gradient()，也就是渐变背景是不能进行补间动画的。</p>
+<p><img src="/uncleKim/images/jinbian.png" alt="blockchain"><br>用 box-shadow，实现它的 CSS 代码如下（可以更简化）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.shadow &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 250px;</span><br><span class="line">    height: 250px;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.shadow::before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    top: -50px;</span><br><span class="line">    left: -50px;</span><br><span class="line">    box-shadow:</span><br><span class="line">        50px 50px #000, 150px 50px #000, 250px 50px #000,</span><br><span class="line">        50px 100px #000, 150px 100px #000, 250px 100px #000,</span><br><span class="line">        50px 150px #000, 150px 150px #000, 250px 150px #000,</span><br><span class="line">        50px 200px #000, 150px 200px #000, 250px 200px #000,</span><br><span class="line">        50px 250px #000, 150px 250px #000, 250px 250px #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用渐变来实现的话，只需要这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.gradient &#123;</span><br><span class="line">    width: 250px;</span><br><span class="line">    height: 250px;</span><br><span class="line">    background-image: linear-gradient(90deg, #000 0%, #000 50%, #fff 50%, #fff 100%);</span><br><span class="line">    background-size:  100px 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://codepen.io/Chokcoco/pen/WaBYZL" target="_blank" rel="noopener">CodePen Demo – box-shadow实现背景动画</a><br><a href="https://codepen.io/davidkpiano/pen/LVzxPV" target="_blank" rel="noopener">CodePen Demo – CSS Checker Illusion( By David Khourshid )</a></p>
+<p>嗯，很有意思，就是实际用途可能不大。</p>
+<h4 id="立体投影"><a href="#立体投影" class="headerlink" title="立体投影"></a>立体投影</h4><p><a href="https://codepen.io/Chokcoco/pen/LgdRKE?editors=1100" target="_blank" rel="noopener">CodePen Demo – 立体投影</a></p>
+<p>所以总结一下：</p>
+<p>立体投影的关键点在于利于伪元素生成一个大小与父元素相近的元素，然后对其进行 rotate 以及定位到合适位置，再赋于阴影操作<br>颜色的运用也很重要，阴影的颜色通常比本身颜色要更深，这里使用 hsl 表示颜色更容易操作，l 控制颜色的明暗度<br>还有其他很多场景：</p>
+<h4 id="文字立体投影-文字长阴影"><a href="#文字立体投影-文字长阴影" class="headerlink" title="文字立体投影 / 文字长阴影"></a>文字立体投影 / 文字长阴影</h4><p><a href="https://codepen.io/Chokcoco/pen/JmgNNa" target="_blank" rel="noopener">CodePen Demo – 立体文字阴影</a><br><a href="https://codepen.io/Chokcoco/pen/XxQJEB?editors=1100" target="_blank" rel="noopener">线性渐变配合阴影实现条纹立体阴影条纹字</a></p>
+<h4 id="使用-box-shadow-实现的灯光效果"><a href="#使用-box-shadow-实现的灯光效果" class="headerlink" title="使用 box-shadow 实现的灯光效果"></a>使用 box-shadow 实现的灯光效果</h4><p><a href="https://codepen.io/Chokcoco/pen/WaLdwX" target="_blank" rel="noopener">CodePen Demo – box-shadow实现霓虹氖灯文字效果</a></p>
+<p><a href="https://codepen.io/Chokcoco/pen/ReOgvq" target="_blank" rel="noopener">CodePen Demo – 使用box-shadow实现阴影灯光show</a></p>
+<p>这次分享就到这了</p>
+<p>引用：</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/coco1s" target="_blank" rel="noopener">https://www.cnblogs.com/coco1s</a><br><a href="https://www.zhangxinxu.com/" target="_blank" rel="noopener">https://www.zhangxinxu.com/</a><br>公众号：前端早读课</p>
+</blockquote>
+<p>推荐：</p>
+<blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a><br><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">https://www.liaoxuefeng.com/</a><br><a href="https://github.com/chokcoco/CSS-Inspiration" target="_blank" rel="noopener">https://github.com/chokcoco/CSS-Inspiration</a><br><a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener">https://vuepress.vuejs.org/zh/</a><br><a href="http://mi-dev.shalltry.com:90/ssp-docs/zh/sdk/" target="_blank" rel="noopener">http://mi-dev.shalltry.com:90/ssp-docs/zh/sdk/</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a><br><a href="http://zhangwenli.com/" target="_blank" rel="noopener">http://zhangwenli.com/</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>"请我喝杯长岛冰茶好不好"</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uncleKim/images/wechatPay.jpg" alt="董大佩 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    董大佩
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/uncleKim/2018/09/03/cssShadow/" title="css 阴影的奇技淫巧">http://yoursite.com/uncleKim/2018/09/03/cssShadow/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/uncleKim/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uncleKim/2018/07/03/lesson2/" rel="next" title="第二课">
+                <i class="fa fa-chevron-left"></i> 第二课
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/uncleKim/2018/09/03/markdown/" rel="prev" title="markdown的一些了解和简单语法">
+                markdown的一些了解和简单语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uncleKim/images/testme.jpg" alt="董大佩">
+            
+              <p class="site-author-name" itemprop="name">董大佩</p>
+              <p class="site-description motion-element" itemprop="description">你是盐汽水 我是棒冰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/uncleKim/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/uncleKim/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/uncleKim/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/uncleKim/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/allendong0310" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="dongpeiup@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3508850587" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/132755338/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#box-shadow-常规用法"><span class="nav-number">1.</span> <span class="nav-text">box-shadow 常规用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础属性语法"><span class="nav-number">1.1.</span> <span class="nav-text">基础属性语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-shadow-模拟多边框"><span class="nav-number">1.2.</span> <span class="nav-text">box-shadow 模拟多边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-shadow-模拟半透明遮罩层"><span class="nav-number">1.3.</span> <span class="nav-text">box-shadow 模拟半透明遮罩层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重-box-shadow-之简单图形"><span class="nav-number">1.4.</span> <span class="nav-text">多重 box-shadow 之简单图形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重-box-shadow-实现立体感"><span class="nav-number">1.5.</span> <span class="nav-text">多重 box-shadow 实现立体感</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-drop-shadow"><span class="nav-number">2.</span> <span class="nav-text">filter:drop-shadow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与box-shadow比较"><span class="nav-number">2.1.</span> <span class="nav-text">与box-shadow比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容性比较"><span class="nav-number">2.1.1.</span> <span class="nav-text">兼容性比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同样的参数值，表现效果有差异"><span class="nav-number">2.1.2.</span> <span class="nav-text">同样的参数值，表现效果有差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#drop-shadow没有内阴影效果"><span class="nav-number">2.1.3.</span> <span class="nav-text">drop-shadow没有内阴影效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#drop-shadow不能阴影叠加"><span class="nav-number">2.1.4.</span> <span class="nav-text">drop-shadow不能阴影叠加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阴影-vs-盒阴影"><span class="nav-number">2.1.5.</span> <span class="nav-text">阴影 vs 盒阴影</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#drop-shadow的实际应用"><span class="nav-number">2.2.</span> <span class="nav-text">drop-shadow的实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#带有箭头指向的浮层面板"><span class="nav-number">2.2.1.</span> <span class="nav-text">带有箭头指向的浮层面板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PNG格式小图标"><span class="nav-number">2.2.2.</span> <span class="nav-text">PNG格式小图标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种各样的阴影"><span class="nav-number">2.3.</span> <span class="nav-text">各种各样的阴影</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单侧阴影"><span class="nav-number">2.3.1.</span> <span class="nav-text">单侧阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#投影背景-背景动画"><span class="nav-number">2.3.2.</span> <span class="nav-text">投影背景 / 背景动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#立体投影"><span class="nav-number">2.3.3.</span> <span class="nav-text">立体投影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字立体投影-文字长阴影"><span class="nav-number">2.3.4.</span> <span class="nav-text">文字立体投影 / 文字长阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-box-shadow-实现的灯光效果"><span class="nav-number">2.3.5.</span> <span class="nav-text">使用 box-shadow 实现的灯光效果</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">董大佩</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/uncleKim/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/uncleKim/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/uncleKim/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/uncleKim/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/uncleKim/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
