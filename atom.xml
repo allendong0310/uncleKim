@@ -6,7 +6,7 @@
   <link href="/uncleKim/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/uncleKim/"/>
-  <updated>2019-10-15T06:33:57.604Z</updated>
+  <updated>2019-10-15T10:56:53.755Z</updated>
   <id>http://yoursite.com/uncleKim/</id>
   
   <author>
@@ -17,28 +17,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>markdown的一些了解和简单语法</title>
-    <link href="http://yoursite.com/uncleKim/2018/09/03/markdown/"/>
-    <id>http://yoursite.com/uncleKim/2018/09/03/markdown/</id>
-    <published>2018-09-03T09:56:48.000Z</published>
-    <updated>2019-10-15T06:33:57.604Z</updated>
+    <title>第一篇文章</title>
+    <link href="http://yoursite.com/uncleKim/2019/10/16/git/"/>
+    <id>http://yoursite.com/uncleKim/2019/10/16/git/</id>
+    <published>2019-10-15T17:30:18.000Z</published>
+    <updated>2019-10-15T10:56:53.755Z</updated>
     
-    <content type="html"><![CDATA[<p>自从前两天开始倒腾这个hexo的博客，简单写了一篇博客，就是我的第一篇博文，完全没有排版和格式，今天抽空来了解一下这个markdown，因为hexo官方建议为markdown标记语言，所以就了解一下，其实完全应该是可以用html来替代的。</p><h2 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h2><p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><h2 id="二-用途"><a href="#二-用途" class="headerlink" title="二.用途"></a>二.用途</h2><p>Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。<br>用于编写说明文档，并且以“README.MD”的文件名保存在软件的目录下面。<br>应该说大部分编辑器都是支持MarkDown模式的，我刚看了一下我正在用的sublime也是ok的，使用的话应该还是了解一下快捷键。</p><h2 id="三-语法"><a href="#三-语法" class="headerlink" title="三.语法"></a>三.语法</h2><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h3><p>标题这个应该是和h1~h6是一样的</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure><h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3><p><strong>加粗</strong><br><em>倾斜</em><br><strong><em>倾斜+加粗</em></strong><br><del>删除线</del><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*倾斜*</span><br><span class="line">***倾斜+加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure></p><h3 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h3><blockquote><p>引用的内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用的内容</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h3><hr><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br></pre></td></tr></table></figure><h3 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h3><p>以test.jpg为例，在blog/source目录下新建一个文件夹，如images，将该图片放入此文件夹中。写作的时候使用的图片链接地址为/images/test.jpg<br><img src="/uncleKim/images/test.jpg" alt="blockchain"></p><p>###列表<br>-无序列表（-+*）<br>1.有序列表（1.）</p><h2 id="写不下去了-有空来补"><a href="#写不下去了-有空来补" class="headerlink" title="写不下去了 有空来补"></a>写不下去了 有空来补</h2><p></p><h3>测试html h3使用<h3><br>(注：html无缝衔接 以后就用html了 毕竟顺手)<p></p></h3></h3>]]></content>
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。</p><h2 id="搭个blog"><a href="#搭个blog" class="headerlink" title="搭个blog"></a>搭个blog</h2><p>昨天看到最后的任务，正好手边也没有可以做记录的平台，顺便研究了一下github page，就想着正好在github上搭一个好了，在网络上找到了Hexo，就动手了，嗯，百度是个好东西。<br>一个问题：<a href="https://allendong0310.github.io和项目目录两种page的区别" target="_blank" rel="noopener">https://allendong0310.github.io和项目目录两种page的区别</a></p><h2 id="这个blog就用来先记录这次的项目吧"><a href="#这个blog就用来先记录这次的项目吧" class="headerlink" title="这个blog就用来先记录这次的项目吧"></a>这个blog就用来先记录这次的项目吧</h2><p>留个坑 hexo 标签和分类的功能还没有研究</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;自从前两天开始倒腾这个hexo的博客，简单写了一篇博客，就是我的第一篇博文，完全没有排版和格式，今天抽空来了解一下这个markdown，因为hexo官方建议为markdown标记语言，所以就了解一下，其实完全应该是可以用html来替代的。&lt;/p&gt;
-&lt;h2 id=&quot;一-定义&quot;
+        &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。&lt;/p&gt;
+&lt;h2 i
       
     
     </summary>
     
-      <category term="hohoho" scheme="http://yoursite.com/uncleKim/categories/hohoho/"/>
-    
-    
-      <category term="tools" scheme="http://yoursite.com/uncleKim/tags/tools/"/>
     
   </entry>
   
@@ -69,6 +65,32 @@
   </entry>
   
   <entry>
+    <title>markdown的一些了解和简单语法</title>
+    <link href="http://yoursite.com/uncleKim/2018/09/03/markdown/"/>
+    <id>http://yoursite.com/uncleKim/2018/09/03/markdown/</id>
+    <published>2018-09-03T09:56:48.000Z</published>
+    <updated>2019-10-15T06:33:57.604Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从前两天开始倒腾这个hexo的博客，简单写了一篇博客，就是我的第一篇博文，完全没有排版和格式，今天抽空来了解一下这个markdown，因为hexo官方建议为markdown标记语言，所以就了解一下，其实完全应该是可以用html来替代的。</p><h2 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h2><p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><h2 id="二-用途"><a href="#二-用途" class="headerlink" title="二.用途"></a>二.用途</h2><p>Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。<br>用于编写说明文档，并且以“README.MD”的文件名保存在软件的目录下面。<br>应该说大部分编辑器都是支持MarkDown模式的，我刚看了一下我正在用的sublime也是ok的，使用的话应该还是了解一下快捷键。</p><h2 id="三-语法"><a href="#三-语法" class="headerlink" title="三.语法"></a>三.语法</h2><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h3><p>标题这个应该是和h1~h6是一样的</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure><h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3><p><strong>加粗</strong><br><em>倾斜</em><br><strong><em>倾斜+加粗</em></strong><br><del>删除线</del><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*倾斜*</span><br><span class="line">***倾斜+加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure></p><h3 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h3><blockquote><p>引用的内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用的内容</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h3><hr><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br></pre></td></tr></table></figure><h3 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h3><p>以test.jpg为例，在blog/source目录下新建一个文件夹，如images，将该图片放入此文件夹中。写作的时候使用的图片链接地址为/images/test.jpg<br><img src="/uncleKim/images/test.jpg" alt="blockchain"></p><p>###列表<br>-无序列表（-+*）<br>1.有序列表（1.）</p><h2 id="写不下去了-有空来补"><a href="#写不下去了-有空来补" class="headerlink" title="写不下去了 有空来补"></a>写不下去了 有空来补</h2><p></p><h3>测试html h3使用<h3><br>(注：html无缝衔接 以后就用html了 毕竟顺手)<p></p></h3></h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;自从前两天开始倒腾这个hexo的博客，简单写了一篇博客，就是我的第一篇博文，完全没有排版和格式，今天抽空来了解一下这个markdown，因为hexo官方建议为markdown标记语言，所以就了解一下，其实完全应该是可以用html来替代的。&lt;/p&gt;
+&lt;h2 id=&quot;一-定义&quot;
+      
+    
+    </summary>
+    
+      <category term="hohoho" scheme="http://yoursite.com/uncleKim/categories/hohoho/"/>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/uncleKim/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第二课</title>
     <link href="http://yoursite.com/uncleKim/2018/07/03/lesson2/"/>
     <id>http://yoursite.com/uncleKim/2018/07/03/lesson2/</id>
@@ -95,28 +117,6 @@
     <id>http://yoursite.com/uncleKim/2018/05/31/first/</id>
     <published>2018-05-30T17:30:18.000Z</published>
     <updated>2019-10-15T10:44:01.199Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。</p><h2 id="搭个blog"><a href="#搭个blog" class="headerlink" title="搭个blog"></a>搭个blog</h2><p>昨天看到最后的任务，正好手边也没有可以做记录的平台，顺便研究了一下github page，就想着正好在github上搭一个好了，在网络上找到了Hexo，就动手了，嗯，百度是个好东西。<br>一个问题：<a href="https://allendong0310.github.io和项目目录两种page的区别" target="_blank" rel="noopener">https://allendong0310.github.io和项目目录两种page的区别</a></p><h2 id="这个blog就用来先记录这次的项目吧"><a href="#这个blog就用来先记录这次的项目吧" class="headerlink" title="这个blog就用来先记录这次的项目吧"></a>这个blog就用来先记录这次的项目吧</h2><p>留个坑 hexo 标签和分类的功能还没有研究</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。&lt;/p&gt;
-&lt;h2 i
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>第一篇文章</title>
-    <link href="http://yoursite.com/uncleKim/2018/05/31/git/"/>
-    <id>http://yoursite.com/uncleKim/2018/05/31/git/</id>
-    <published>2018-05-30T17:30:18.000Z</published>
-    <updated>2019-04-15T05:54:25.788Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>很早就报名了，昨天刚开始看第一节课，也就是随便看看，想要系统的将前端知识梳理一遍，毕竟越往后基础最重要。</p><h2 id="搭个blog"><a href="#搭个blog" class="headerlink" title="搭个blog"></a>搭个blog</h2><p>昨天看到最后的任务，正好手边也没有可以做记录的平台，顺便研究了一下github page，就想着正好在github上搭一个好了，在网络上找到了Hexo，就动手了，嗯，百度是个好东西。<br>一个问题：<a href="https://allendong0310.github.io和项目目录两种page的区别" target="_blank" rel="noopener">https://allendong0310.github.io和项目目录两种page的区别</a></p><h2 id="这个blog就用来先记录这次的项目吧"><a href="#这个blog就用来先记录这次的项目吧" class="headerlink" title="这个blog就用来先记录这次的项目吧"></a>这个blog就用来先记录这次的项目吧</h2><p>留个坑 hexo 标签和分类的功能还没有研究</p>]]></content>
     
