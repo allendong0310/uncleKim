@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/uncleKim/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/uncleKim/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/uncleKim/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uncleKim/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uncleKim/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uncleKim/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/uncleKim/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="work,">
+
+
+
+
+
+  <link rel="alternate" href="/uncleKim/atom.xml" title="Uncle Kim" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="限制输入框只显示整数尝试过很多的办法，最好用的正则的办法，虽然html5现在已经提供一些方法，但是在具体的项目中是远远不够的，判断的时候一般采取的办法1.在失去焦点的时候判断。2.在用户释放键盘按钮时执行，也就是 onkeyup。3.在vue中放在@change事件中，交互不太友好，会在失去焦点的时候触发。 1&amp;lt;input type=&apos;text&apos; onkeyup=&quot;value=value.r">
+<meta name="keywords" content="work">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些常用的方法">
+<meta property="og:url" content="http://yoursite.com/uncleKim/2019/10/22/function/index.html">
+<meta property="og:site_name" content="Uncle Kim">
+<meta property="og:description" content="限制输入框只显示整数尝试过很多的办法，最好用的正则的办法，虽然html5现在已经提供一些方法，但是在具体的项目中是远远不够的，判断的时候一般采取的办法1.在失去焦点的时候判断。2.在用户释放键盘按钮时执行，也就是 onkeyup。3.在vue中放在@change事件中，交互不太友好，会在失去焦点的时候触发。 1&amp;lt;input type=&apos;text&apos; onkeyup=&quot;value=value.r">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:updated_time" content="2019-10-22T11:55:33.612Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些常用的方法">
+<meta name="twitter:description" content="限制输入框只显示整数尝试过很多的办法，最好用的正则的办法，虽然html5现在已经提供一些方法，但是在具体的项目中是远远不够的，判断的时候一般采取的办法1.在失去焦点的时候判断。2.在用户释放键盘按钮时执行，也就是 onkeyup。3.在vue中放在@change事件中，交互不太友好，会在失去焦点的时候触发。 1&amp;lt;input type=&apos;text&apos; onkeyup=&quot;value=value.r">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/uncleKim/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/uncleKim/2019/10/22/function/">
+
+
+
+
+
+  <title>一些常用的方法 | Uncle Kim</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-134841514-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <span class="site-img"></span>
+      <a href="/uncleKim/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle Kim</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/uncleKim/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/uncleKim/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/uncleKim/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/uncleKim/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/uncleKim/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dialogue">
+          <a href="/uncleKim/dialogue/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            dialogue
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncleKim/uncleKim/2019/10/22/function/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="董大佩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uncleKim/images/testme.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle Kim">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一些常用的方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T16:28:38Z">
+                2019-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/uncleKim/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="限制输入框只显示整数"><a href="#限制输入框只显示整数" class="headerlink" title="限制输入框只显示整数"></a>限制输入框只显示整数</h2><p>尝试过很多的办法，最好用的正则的办法，虽然html5现在已经提供一些方法，但是在具体的项目中是远远不够的，判断的时候一般采取的办法<br>1.在失去焦点的时候判断。<br>2.在用户释放键盘按钮时执行，也就是 <code>onkeyup</code>。<br>3.在vue中放在@change事件中，交互不太友好，会在失去焦点的时候触发。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">'text'</span> onkeyup=<span class="string">"value=value.replace(/^(0+)|[^\d]+/g,'')"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>留个坑：做一套表单验证系统，现在是在submit按钮上验证，没有文字交互，不够友好。<br>暂有方案：<br>1.点击按钮时弹框提示所有未通过验证表单<br>2.点击提交按钮时错误表单提示<br>3.每个表单失去焦点（or onkeyup）时提示</p>
+<h2 id="一些常用命令"><a href="#一些常用命令" class="headerlink" title="一些常用命令"></a>一些常用命令</h2><p>git设置http免密<br><code>git config --global credential.helper store</code></p>
+<p>清除git记住的密码<br><code>git config --system --unset credential.helper</code></p>
+<p>Linux中su、su - 的区别</p>
+<ul>
+<li>su 切换到root用户，但是并没有转到root用户家目录下，即没有改变用户的环境。</li>
+<li>su - 切换到root用户，并转到root用户的家目录下，即改变到了root用户的环境。</li>
+</ul>
+<p>添加删除远程仓库<br><code>git remote rm origin</code><br><code>git remote remove origin</code><br><code>git remote add origin &lt;originUrl&gt;</code><br>关联后，使用命令<code>git push -u origin maste</code>r第一次推送master分支的所有内容;<br><code>git remote rename &lt;oldName&gt; &lt;newName&gt;</code></p>
+<p>git 子项目 init<br><code>git submodule update --remote projectName</code></p>
+<p>解决npm install cache问题<br><code>npm cache verify</code></p>
+<h2 id="一键粘贴"><a href="#一键粘贴" class="headerlink" title="一键粘贴"></a>一键粘贴</h2><p>使用document.execCommand方法</p>
+<p>当一个HTML文档切换到设计模式时，document暴露 execCommand 方法，该方法允许运行命令来操纵可编辑内容区域的元素。</p>
+<p><code>document.execCommand(aCommandName, aShowDefaultUI, aValueArgument)</code><br>aCommandName<br>    一个 DOMString ，命令的名称。<br>aShowDefaultUI<br>    一个 Boolean， 是否展示用户界面，一般为 false。Mozilla 没有实现。<br>aValueArgument<br>    一些命令（例如insertImage）需要额外的参数（insertImage需要提供插入image的url），默认为null。</p>
+<p>copy 代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"oDiv"</span>&gt;1234567890&lt;/div&gt;</span><br><span class="line">&lt;textarea id=<span class="string">"contents"</span> rows=<span class="string">"10"</span> cols=<span class="string">"10"</span>&gt;&lt;/textarea&gt;</span><br><span class="line">&lt;button id=<span class="string">"btn"</span>&gt;点击&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">var btn = document.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	copyText();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">copyText</span></span>()&#123; </span><br><span class="line">	var e=document.getElementById(<span class="string">"contents"</span>);//获取textarea的id</span><br><span class="line">	e.value = document.getElementById(<span class="string">"oDiv"</span>).innerText;//把标签的文本内容赋值给textarea</span><br><span class="line">	e.select(); //选择textarea的文本内容</span><br><span class="line">	document.execCommand(<span class="string">"Copy"</span>); //执行浏览器复制命令</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体的项目中可以隐藏 textarea</p>
+<h2 id="下载功能"><a href="#下载功能" class="headerlink" title="下载功能"></a>下载功能</h2><p>通常情况下，下载都是直接用get请求。<br>但是在具体的项目中，有一个项目的认证是通过前端将约定好的cookies放在setRequestHeader里，直接get下载的时候会跳过认证。<br>所以写了原生的请求来解决这种情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var exportForm = <span class="keyword">function</span>(url, name) &#123;</span><br><span class="line">	var self = this;</span><br><span class="line">	var xmlHTTP = new XMLHttpRequest();</span><br><span class="line">	xmlHTTP.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">	xmlHTTP.setRequestHeader(<span class="string">'Authorization'</span>, <span class="string">'aaa'</span>);</span><br><span class="line">	xmlHTTP.responseType = <span class="string">'arraybuffer'</span>;</span><br><span class="line">	xmlHTTP.onload = <span class="keyword">function</span>(e) &#123;</span><br><span class="line">		var blob = new Blob([this.response]);</span><br><span class="line">		var src = window.URL.createObjectURL(blob);</span><br><span class="line">		var a = document.createElement(<span class="string">'a'</span>);</span><br><span class="line">		var filename = name + <span class="string">'.csv'</span>;</span><br><span class="line">		a.download = filename;</span><br><span class="line">		a.href = src;</span><br><span class="line">		$(<span class="string">'body'</span>).append(a);</span><br><span class="line">		a.click();</span><br><span class="line">		$(a).remove();	</span><br><span class="line">	&#125;;</span><br><span class="line">	xmlHTTP.send();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>前端直接下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> download(filename, text) &#123;</span><br><span class="line">	var element = document.createElement(<span class="string">'a'</span>);</span><br><span class="line">	element.setAttribute(<span class="string">'href'</span>, <span class="string">'data:text/plain;charset=utf-8,'</span> + encodeURIComponent(text));</span><br><span class="line">	element.setAttribute(<span class="string">'download'</span>, filename);</span><br><span class="line">	</span><br><span class="line">	element.style.display = <span class="string">'none'</span>;</span><br><span class="line">	document.body.appendChild(element);</span><br><span class="line">	</span><br><span class="line">	element.click();</span><br><span class="line">	</span><br><span class="line">	document.body.removeChild(element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">download(<span class="string">"hello.txt"</span>,<span class="string">"This is the content of my file :)"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="获取一段时间内每天的时间字符串"><a href="#获取一段时间内每天的时间字符串" class="headerlink" title="获取一段时间内每天的时间字符串"></a>获取一段时间内每天的时间字符串</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getDateArray(startStr, endStr) &#123;</span><br><span class="line">    var dateArray = []</span><br><span class="line">    <span class="keyword">function</span> getDate(datestr)&#123;</span><br><span class="line">      var temp = datestr.split(<span class="string">"-"</span>);</span><br><span class="line">      var date = new Date(temp.join(<span class="string">'/'</span>));</span><br><span class="line">      <span class="built_in">return</span> date;</span><br><span class="line">    &#125;</span><br><span class="line">    var startTime = getDate(startStr);</span><br><span class="line">    var endTime = getDate(endStr);</span><br><span class="line">    <span class="keyword">while</span>((endTime.getTime()-startTime.getTime())&gt;=0)&#123;</span><br><span class="line">      var year = startTime.getFullYear();</span><br><span class="line">      var month = startTime.getMonth() +1</span><br><span class="line">      month = month &lt; 10?<span class="string">"0"</span>+month:month;</span><br><span class="line">      var day = startTime.getDate().toString().length==1?<span class="string">"0"</span>+startTime.getDate():startTime.getDate();</span><br><span class="line">      startTime.setDate(startTime.getDate()+1);</span><br><span class="line">      dateArray.push(year+<span class="string">"-"</span>+month+<span class="string">"-"</span>+day)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> dateArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getDateArray(<span class="string">'2019/09/10'</span>,<span class="string">'2019/09/19'</span>)</span><br><span class="line">getDateArray(<span class="string">'2019-09-10'</span>,<span class="string">'2019-09-19'</span>)</span><br><span class="line">getDateArray(<span class="string">'2019-09'</span>,<span class="string">'2020-10'</span>)</span><br><span class="line">getDateArray(<span class="string">'2019'</span>,<span class="string">'2020'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>想通过a标签的css伪类实现点击过的链接变成指定样式，刷新之后恢复正常，参考样式百度的搜索页面。<br>后来发现好像实现不了，就在vue中保存在store里。<br>留坑</p>
+<h2 id="tab"><a href="#tab" class="headerlink" title="tab"></a>tab</h2><p>tab这种东西在刚写jq的时候已经写栏了吧<br>这个实在一个非洲的项目中又重写的一个，因为怕vue太重，我们国内现在网络状态已经没有机会用了。</p>
+<blockquote>
+<p><a href="https://codepen.io/allendong0310/pen/JjjEZJx" target="_blank" rel="noopener">https://codepen.io/allendong0310/pen/JjjEZJx</a></p>
+</blockquote>
+<h2 id="前端查询（vue）"><a href="#前端查询（vue）" class="headerlink" title="前端查询（vue）"></a>前端查询（vue）</h2><blockquote>
+<p><a href="https://codepen.io/allendong0310/pen/yLLgRWq" target="_blank" rel="noopener">https://codepen.io/allendong0310/pen/yLLgRWq</a></p>
+</blockquote>
+<h2 id="一个ajax请求方法（待测试）"><a href="#一个ajax请求方法（待测试）" class="headerlink" title="一个ajax请求方法（待测试）"></a>一个ajax请求方法（待测试）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">*参数说明：</span><br><span class="line">*opts: &#123;<span class="string">'可选参数'</span>&#125;</span><br><span class="line">**method: 请求方式:GET/POST,默认值:<span class="string">'GET'</span>;</span><br><span class="line">**url:    发送请求的地址, 默认值: 当前页地址;</span><br><span class="line">**data: string,json;</span><br><span class="line">**async: 是否异步:<span class="literal">true</span>/<span class="literal">false</span>,默认值:<span class="literal">true</span>;</span><br><span class="line">**cache: 是否缓存：<span class="literal">true</span>/<span class="literal">false</span>,默认值:<span class="literal">true</span>;</span><br><span class="line"> **contentType: HTTP头信息，默认值：<span class="string">'application/x-www-form-urlencoded'</span>;</span><br><span class="line">   **success: 请求成功后的回调函数;</span><br><span class="line">   **error: 请求失败后的回调函数;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> ajax(opts)&#123;</span><br><span class="line">//一.设置默认参数</span><br><span class="line">	var defaults = &#123;    </span><br><span class="line">		method: <span class="string">'GET'</span>,</span><br><span class="line">		url: <span class="string">''</span>,</span><br><span class="line">		data: <span class="string">''</span>,        </span><br><span class="line">		async: <span class="literal">true</span>,</span><br><span class="line">		cache: <span class="literal">true</span>,</span><br><span class="line">		contentType: <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">		success: <span class="function"><span class="title">function</span></span> ()&#123;&#125;,</span><br><span class="line">		error: <span class="function"><span class="title">function</span></span> ()&#123;&#125;</span><br><span class="line">	&#125;;    </span><br><span class="line"></span><br><span class="line">	//二.用户参数覆盖默认参数    </span><br><span class="line">	<span class="keyword">for</span>(var key <span class="keyword">in</span> opts)&#123;</span><br><span class="line">		defaults[key] = opts[key];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//三.对数据进行处理</span><br><span class="line">	<span class="keyword">if</span>(typeof defaults.data === <span class="string">'object'</span>)&#123;    //处理 data</span><br><span class="line">		var str = <span class="string">''</span>;</span><br><span class="line">		var value = <span class="string">''</span>;</span><br><span class="line">		<span class="keyword">for</span>(var key <span class="keyword">in</span> defaults.data)&#123;</span><br><span class="line">			value = defaults.data[key];</span><br><span class="line">			<span class="keyword">if</span>( defaults.data[key].indexOf(<span class="string">'&amp;'</span>) !== -1 ) value = defaults.data[key].replace(/&amp;/g, escape(<span class="string">'&amp;'</span>));   //对参数中有&amp;进行兼容处理</span><br><span class="line">			<span class="keyword">if</span>( key.indexOf(<span class="string">'&amp;'</span>) !== -1 )  key = key.replace(/&amp;/g, escape(<span class="string">'&amp;'</span>));   //对参数中有&amp;进行兼容处理</span><br><span class="line">			str += key + <span class="string">'='</span> + value + <span class="string">'&amp;'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		defaults.data = str.substring(0, str.length - 1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	defaults.method = defaults.method.toUpperCase();    //处理 method</span><br><span class="line"></span><br><span class="line">	defaults.cache = defaults.cache ? <span class="string">''</span> : <span class="string">'&amp;'</span> + new Date().getTime() ;//处理 cache</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(defaults.method === <span class="string">'GET'</span> &amp;&amp; (defaults.data || defaults.cache))    defaults.url += <span class="string">'?'</span> + defaults.data + defaults.cache;    //处理 url    </span><br><span class="line"></span><br><span class="line">	//四.开始编写ajax</span><br><span class="line">	//1.创建ajax对象</span><br><span class="line">	var oXhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">	//2.和服务器建立联系，告诉服务器你要取什么文件</span><br><span class="line">	oXhr.open(defaults.method, defaults.url, defaults.async);</span><br><span class="line">	//3.发送请求</span><br><span class="line">	<span class="keyword">if</span>(defaults.method === <span class="string">'GET'</span>)    </span><br><span class="line">		oXhr.send(null);</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		oXhr.setRequestHeader(<span class="string">"Content-type"</span>, defaults.contentType);</span><br><span class="line">		oXhr.send(defaults.data);</span><br><span class="line">	&#125;    </span><br><span class="line">	//4.等待服务器回应</span><br><span class="line">	oXhr.onreadystatechange = <span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">		<span class="keyword">if</span>(oXhr.readyState === 4)&#123;</span><br><span class="line">			<span class="keyword">if</span>(oXhr.status === 200)</span><br><span class="line">				defaults.success.call(oXhr, oXhr.responseText);</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				defaults.error();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="监听函数-addEventListener"><a href="#监听函数-addEventListener" class="headerlink" title="监听函数(addEventListener)"></a>监听函数(addEventListener)</h2><blockquote>
+<p><a href="https://codepen.io/allendong0310/pen/oNNBQgX" target="_blank" rel="noopener">https://codepen.io/allendong0310/pen/oNNBQgX</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>"请我喝杯长岛冰茶好不好"</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uncleKim/images/wechatPay.jpg" alt="董大佩 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    董大佩
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/uncleKim/2019/10/22/function/" title="一些常用的方法">http://yoursite.com/uncleKim/2019/10/22/function/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/uncleKim/tags/work/" rel="tag"># work</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uncleKim/2019/10/15/cssShadow/" rel="next" title="css 阴影的奇技淫巧">
+                <i class="fa fa-chevron-left"></i> css 阴影的奇技淫巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uncleKim/images/testme.jpg" alt="董大佩">
+            
+              <p class="site-author-name" itemprop="name">董大佩</p>
+              <p class="site-description motion-element" itemprop="description">你是盐汽水 我是棒冰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/uncleKim/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/uncleKim/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/uncleKim/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/uncleKim/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/allendong0310" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="dongpeiup@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3508850587" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/132755338/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#限制输入框只显示整数"><span class="nav-number">1.</span> <span class="nav-text">限制输入框只显示整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些常用命令"><span class="nav-number">2.</span> <span class="nav-text">一些常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键粘贴"><span class="nav-number">3.</span> <span class="nav-text">一键粘贴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载功能"><span class="nav-number">4.</span> <span class="nav-text">下载功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取一段时间内每天的时间字符串"><span class="nav-number">5.</span> <span class="nav-text">获取一段时间内每天的时间字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遗留问题"><span class="nav-number">6.</span> <span class="nav-text">遗留问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tab"><span class="nav-number">7.</span> <span class="nav-text">tab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端查询（vue）"><span class="nav-number">8.</span> <span class="nav-text">前端查询（vue）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个ajax请求方法（待测试）"><span class="nav-number">9.</span> <span class="nav-text">一个ajax请求方法（待测试）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听函数-addEventListener"><span class="nav-number">10.</span> <span class="nav-text">监听函数(addEventListener)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">董大佩</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/uncleKim/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/uncleKim/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/uncleKim/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/uncleKim/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/uncleKim/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/uncleKim/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
