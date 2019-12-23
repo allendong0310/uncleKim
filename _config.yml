@@ -84,6 +84,8 @@ feed:
     path: atom.xml
     limit: 20
 
+livere_uid: MTAyMC80ODAyNS8yNDUyMg==
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

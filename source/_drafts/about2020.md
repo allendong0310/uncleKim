@@ -1,17 +1,11 @@
-<!--
- * @Description: 
- * @Author: pei.dong
- * @Date: 2019-12-20 14:42:53
- * @LastEditTime : 2019-12-20 18:16:22
- * @LastEditors  : pei.dong
- -->
 ---
 title: 2020 你好
 date: 2019-12-20 14:42:53
 tags: life
 categories: summary
 ---
-这个世界不会好
+
+## 这个世界不会好
 
 大家都觉得2019太难了，可能是我悲观吧，我觉得2020也不会好，但是还是想去一场李志的跨年。
 
